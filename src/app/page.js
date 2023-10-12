@@ -14,10 +14,7 @@ export default function Home() {
         <div className="welcomeStart flex">
           <h1 className={meri.className}>
             <strong>
-              Hey
-              {localStorage.getItem("signIn")
-                ? ` ${localStorage.getItem("userName")}!`
-                : " there!"}
+              Hey There!
             </strong>
           </h1>
           <p>Lets create something awesome today</p>
