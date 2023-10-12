@@ -47,7 +47,7 @@ export default function Template({ children }) {
                 <GoHomeFill />
               </IconContext.Provider>
             </Link>
-            <Link href="/pending">
+            <Link href={user ? "/pending" : "/authentication/login"}>
               <IconContext.Provider
                 value={{
                   size: "1.5rem",
@@ -60,7 +60,7 @@ export default function Template({ children }) {
             </Link>
           </div>
           <div className="sidebarIcons flex">
-            <Link href="/pending">
+            <Link href={user ? "/pending" : "/authentication/login"}>
               <IconContext.Provider
                 value={{
                   size: "1.5rem",
@@ -163,7 +163,7 @@ export default function Template({ children }) {
                 <GoHomeFill />
               </IconContext.Provider>
             </Link>
-            <Link href="/pending">
+            <Link href={user ? "/pending" : "/authentication/login"}>
               <IconContext.Provider
                 value={{
                   size: "1.5rem",
@@ -176,7 +176,7 @@ export default function Template({ children }) {
             </Link>
           </div>
           <div className="sidebarIcons flex">
-            <Link href="/pending">
+            <Link href={user ? "/pending" : "/authentication/login"}>
               <IconContext.Provider
                 value={{
                   size: "1.5rem",
@@ -279,7 +279,12 @@ export default function Template({ children }) {
               >
                 Create Content
               </button>
-              <div className="credit flex">
+              <div
+                className="credit flex"
+                style={{
+                  display: user ? "inherit" : "none",
+                }}
+              >
                 <Image
                   src={credit}
                   width={24}
@@ -292,7 +297,7 @@ export default function Template({ children }) {
             </div>
           </nav>
           <div className="personalDetails flex">
-            <Link href="/pending">
+            <Link href={user ? "/pending" : "/authentication/login"}>
               <IconContext.Provider
                 value={{
                   size: "1.5rem",
@@ -303,7 +308,7 @@ export default function Template({ children }) {
                 <SlCalender />
               </IconContext.Provider>
             </Link>
-            <Link href="/pending">
+            <Link href={user ? "/pending" : "/authentication/login"}>
               <IconContext.Provider
                 value={{
                   size: "1.5rem",
@@ -323,7 +328,7 @@ export default function Template({ children }) {
               Login
             </Link>
             <Link
-              href={"/pending"}
+              href={user ? "/pending" : "/authentication/login"}
               style={{
                 display: user ? "inherit" : "none",
               }}

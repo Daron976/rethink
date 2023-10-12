@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./signup.module.css";
 import { useState } from "react";
 import { auth } from "@/app/components/auth";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { emailExp } from "@/app/components/auth";
 // import { useNavigate } from "react-router-dom";
 import { useRouter } from "next/navigation";
@@ -21,7 +21,9 @@ export default function Signup() {
         if (pword.length >= 8) {
           createUserWithEmailAndPassword(auth, email, pword)
             .then((userCred) => {
-              userCred.user.displayName = name;
+              updateProfile(auth.currentUser, {
+                displayName: name,
+              });
               setName("");
               setEmail("");
               setPword("");

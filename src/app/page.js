@@ -4,16 +4,21 @@ import Socials from "./components/Socials";
 import { PiGridFourFill, PiMagnifyingGlassLight } from "react-icons/pi";
 import { VscAccount } from "react-icons/vsc";
 import { IconContext } from "react-icons";
+import { useEffect, useState } from "react";
 
 const meri = Merienda({ subsets: ["latin"] });
 
 export default function Home() {
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    if (localStorage) setUser(localStorage.getItem("userName"));
+  }, [user]);
   return (
     <>
       <header className="welcomeBanner flex">
         <div className="welcomeStart flex">
           <h1 className={meri.className}>
-            <strong>Hey There!</strong>
+            <strong>Hey {user || "there"}!</strong>
           </h1>
           <p>Lets create something awesome today</p>
           <button type="button" name="create" className="createBtn btn">
