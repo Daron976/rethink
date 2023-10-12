@@ -13,7 +13,12 @@ export default function Home() {
       <header className="welcomeBanner flex">
         <div className="welcomeStart flex">
           <h1 className={meri.className}>
-            <strong>Hey There!</strong>
+            <strong>
+              Hey
+              {localStorage.getItem("signIn")
+                ? ` ${localStorage.getItem("userName")}!`
+                : " there!"}
+            </strong>
           </h1>
           <p>Lets create something awesome today</p>
           <button type="button" name="create" className="createBtn btn">
