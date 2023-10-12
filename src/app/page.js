@@ -1,21 +1,25 @@
 "use client";
 import { Merienda } from "next/font/google";
 import Socials from "./components/Socials";
-import { Icon } from "./components/icon";
+// import { Icon } from "./components/icon";
 import { PiGridFourFill, PiMagnifyingGlassLight } from "react-icons/pi";
 import { VscAccount } from "react-icons/vsc";
+import { IconContext } from "react-icons";
 
 const meri = Merienda({ subsets: ["latin"] });
 
 export default function Home() {
+  const icon = (size, color, icon, className = "nav-icon") => (
+    <IconContext.Provider value={{ size, className, color }}>
+      {icon}
+    </IconContext.Provider>
+  );
   return (
     <>
       <header className="welcomeBanner flex">
         <div className="welcomeStart flex">
           <h1 className={meri.className}>
-            <strong>
-              Hey There!
-            </strong>
+            <strong>Hey There!</strong>
           </h1>
           <p>Lets create something awesome today</p>
           <button type="button" name="create" className="createBtn btn">
@@ -36,7 +40,7 @@ export default function Home() {
               setTimeout(() => {}, 500);
             }}
           >
-            {Icon(
+            {icon(
               "3rem",
               "rgba(70, 61, 97, 1)",
               <PiGridFourFill />,
@@ -49,7 +53,7 @@ export default function Home() {
             <option>Start</option>
             <option>Create</option>
           </select>
-          {Icon(
+          {icon(
             "3rem",
             "rgb(77, 73, 89)",
             <VscAccount />,
@@ -68,7 +72,7 @@ export default function Home() {
         id="mobileSearchForm"
         className="flex mobileItem"
       >
-        {Icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
+        {icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
         <input
           type="search"
           name="filter"
