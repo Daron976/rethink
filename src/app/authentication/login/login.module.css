@@ -1,0 +1,87 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.login {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login form {
+  flex-direction: column;
+  width: 15rem;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.login input[type="input"] {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.196);
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.login input[type="input"]:focus {
+  outline: none;
+}
+
+.login button {
+  width: 80%;
+}
+
+.login a {
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+}
+
+.error,
+.backEndError {
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
+  color: #ca473d;
+  animation: error-appearance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* .login p {
+  margin: 0;
+  padding: 0;
+} */
+
+.login input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: grey;
+  font-weight: 900;
+  opacity: 1; /* Firefox */
+}
+
+.login input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: grey;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 576px) {
+
+}
+
+/* @keyframes error-appearance {
+  0% {
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+} */

@@ -1,95 +1,94 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import { Merienda } from "next/font/google";
+import Socials from "./components/Socials";
+import { icon } from "./components/icon";
+import { PiGridFourFill, PiMagnifyingGlassLight } from "react-icons/pi";
+import { VscAccount } from "react-icons/vsc";
+
+const meri = Merienda({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className="welcomeBanner flex">
+        <div className="welcomeStart flex">
+          <h1 className={meri.className}>
+            <strong>
+              Hey
+              {localStorage.getItem("signIn")
+                ? ` ${localStorage.getItem("userName")}!`
+                : " there!"}
+            </strong>
+          </h1>
+          <p>Lets create something awesome today</p>
+          <button type="button" name="create" className="createBtn btn">
+            Start Creating
+          </button>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
+        <div className="welcomeEnd flex">
+          <button
+            type="button"
+            name="logout"
+            className="logoutBtn"
+            onClick={(e) => {
+              document
+                .querySelector(".mobileNav")
+                .classList.remove("menuClose");
+              document.querySelector(".mobileNav").classList.add("menuOpen");
+              document.querySelector(".mobileNav").style.display = "flex";
+              setTimeout(() => {}, 500);
+            }}
+          >
+            {icon(
+              "3rem",
+              "rgba(70, 61, 97, 1)",
+              <PiGridFourFill />,
+              "mobileItem navIcon"
+            )}
+          </button>
+          <select name="zaraVentures" id="zaraSelect" autocomplete="off">
+            <option selected>Zara Ventures</option>
+            <option>Rethink</option>
+            <option>Start</option>
+            <option>Create</option>
+          </select>
+          {icon(
+            "3rem",
+            "rgb(77, 73, 89)",
+            <VscAccount />,
+            "mobileItem navIcon"
+          )}
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            You should have more engagement by 6pm today, try posting then.
+            <br />
+            Try out SEO optimization tool to increase engagement by 40%
           </p>
-        </a>
-      </div>
-    </main>
-  )
+        </div>
+      </header>
+      <form
+        action=""
+        name="searchForm"
+        id="mobileSearchForm"
+        className="flex mobileItem"
+      >
+        {icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
+        <input
+          type="search"
+          name="filter"
+          className="searchBar"
+          placeholder="Search for templates, project, etc"
+        />
+      </form>
+      <section className="mainContent">
+        <div>
+          <h1>Most Popular Tools</h1>
+          <p>Explore the trending tools to create your copies fast</p>
+        </div>
+        <div className="mainContentWrapper">
+          <Socials />
+          <Socials />
+        </div>
+      </section>
+    </>
+  );
 }
