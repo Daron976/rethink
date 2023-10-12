@@ -46,8 +46,8 @@ export default function Home() {
               "mobileItem navIcon"
             )}
           </button>
-          <select name="zaraVentures" id="zaraSelect" autocomplete="off">
-            <option selected>Zara Ventures</option>
+          <select name="zaraVentures" id="zaraSelect" autoComplete="off">
+            <option>Zara Ventures</option>
             <option>Rethink</option>
             <option>Start</option>
             <option>Create</option>
