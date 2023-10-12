@@ -13,7 +13,7 @@ import { SlCalender } from "react-icons/sl";
 import { PiMagnifyingGlassLight } from "react-icons/pi";
 import { IoMdOptions } from "react-icons/io";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { icon } from "./components/icon";
+import { Icon } from "./components/icon";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaRegWindowClose } from "react-icons/fa";
@@ -38,15 +38,15 @@ export default function Template({ children }) {
               alt="logo"
             />
             <Link href="/">
-              {icon("1.5rem", "rgb(94, 62, 186)", <GoHomeFill />)}
+              {Icon("1.5rem", "rgb(94, 62, 186)", <GoHomeFill />)}
             </Link>
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <BiBookContent />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <BiBookContent />)}
             </Link>
           </div>
           <div className="sidebarIcons flex">
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <LuSettings />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <LuSettings />)}
             </Link>
             <Link
               href="/authentication/login"
@@ -55,7 +55,7 @@ export default function Template({ children }) {
                 display: user ? "none" : "inherit",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxEnter />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <RxEnter />)}
             </Link>
             <button
               type="button"
@@ -71,7 +71,7 @@ export default function Template({ children }) {
                 display: user ? "inherit" : "none",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxExit />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <RxExit />)}
             </button>
           </div>
         </nav>
@@ -102,19 +102,19 @@ export default function Template({ children }) {
                   }, 300);
                 }}
               >
-                {icon("1.5rem", "rgb(77, 73, 89)", <FaRegWindowClose />)}
+                {Icon("1.5rem", "rgb(77, 73, 89)", <FaRegWindowClose />)}
               </button>
             </div>
             <Link href="/">
-              {icon("1.5rem", "rgb(94, 62, 186)", <GoHomeFill />)}
+              {Icon("1.5rem", "rgb(94, 62, 186)", <GoHomeFill />)}
             </Link>
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <BiBookContent />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <BiBookContent />)}
             </Link>
           </div>
           <div className="sidebarIcons flex">
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <LuSettings />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <LuSettings />)}
             </Link>
             <Link
               href="/authentication/login"
@@ -123,7 +123,7 @@ export default function Template({ children }) {
                 display: user ? "none" : "inherit",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxEnter />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <RxEnter />)}
             </Link>
             <button
               type="button"
@@ -139,7 +139,7 @@ export default function Template({ children }) {
                 display: user ? "inherit" : "none",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxExit />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <RxExit />)}
             </button>
           </div>
         </nav>
@@ -148,7 +148,7 @@ export default function Template({ children }) {
         <header className="pageHeader flex">
           <nav className="flex">
             <form action="" name="searchForm" id="searchForm" className="flex">
-              {icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
+              {Icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
               <input
                 type="search"
                 name="filter"
@@ -156,8 +156,8 @@ export default function Template({ children }) {
                 placeholder="Search for templates, project, etc"
               />
               <div className="formClose flex">
-                {icon("1.5rem", "rgba(77, 77, 77, 0.2)", <IoMdOptions />)}
-                {icon("1rem", "rgba(235, 234, 239, 1)", <AiFillCloseCircle />)}
+                {Icon("1.5rem", "rgba(77, 77, 77, 0.2)", <IoMdOptions />)}
+                {Icon("1rem", "rgba(235, 234, 239, 1)", <AiFillCloseCircle />)}
               </div>
             </form>
             <div className="createBtnCredit flex">
@@ -182,10 +182,10 @@ export default function Template({ children }) {
           </nav>
           <div className="personalDetails flex">
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <SlCalender />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <SlCalender />)}
             </Link>
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <IoIosNotificationsOutline />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <IoIosNotificationsOutline />)}
             </Link>
             <Link
               href={"authentication/login"}
@@ -201,7 +201,7 @@ export default function Template({ children }) {
                 display: user ? "inherit" : "none",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <VscAccount />)}
+              {Icon("1.5rem", "rgb(77, 73, 89)", <VscAccount />)}
             </Link>
           </div>
         </header>

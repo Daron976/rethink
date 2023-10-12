@@ -1,7 +1,7 @@
 "use client";
 import { Merienda } from "next/font/google";
 import Socials from "./components/Socials";
-import { icon } from "./components/icon";
+import { Icon } from "./components/icon";
 import { PiGridFourFill, PiMagnifyingGlassLight } from "react-icons/pi";
 import { VscAccount } from "react-icons/vsc";
 
@@ -36,7 +36,7 @@ export default function Home() {
               setTimeout(() => {}, 500);
             }}
           >
-            {icon(
+            {Icon(
               "3rem",
               "rgba(70, 61, 97, 1)",
               <PiGridFourFill />,
@@ -49,7 +49,7 @@ export default function Home() {
             <option>Start</option>
             <option>Create</option>
           </select>
-          {icon(
+          {Icon(
             "3rem",
             "rgb(77, 73, 89)",
             <VscAccount />,
@@ -68,7 +68,7 @@ export default function Home() {
         id="mobileSearchForm"
         className="flex mobileItem"
       >
-        {icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
+        {Icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
         <input
           type="search"
           name="filter"
