@@ -18,12 +18,6 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 export default function Template({ children }) {
-  const icon = (size, color, icon, className = "nav-icon") => (
-    <IconContext.Provider value={{ size, className, color }}>
-      {icon}
-    </IconContext.Provider>
-  );
-
   const [user, setUser] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("signIn")) {
@@ -43,15 +37,39 @@ export default function Template({ children }) {
               alt="logo"
             />
             <Link href="/">
-              {icon("1.5rem", "rgb(94, 62, 186)", <GoHomeFill />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(94, 62, 186)",
+                }}
+              >
+                <GoHomeFill />
+              </IconContext.Provider>
             </Link>
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <BiBookContent />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <BiBookContent />
+              </IconContext.Provider>
             </Link>
           </div>
           <div className="sidebarIcons flex">
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <LuSettings />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <LuSettings />
+              </IconContext.Provider>
             </Link>
             <Link
               href="/authentication/login"
@@ -60,7 +78,15 @@ export default function Template({ children }) {
                 display: user ? "none" : "inherit",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxEnter />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <RxEnter />
+              </IconContext.Provider>
             </Link>
             <button
               type="button"
@@ -76,7 +102,15 @@ export default function Template({ children }) {
                 display: user ? "inherit" : "none",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxExit />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <RxExit />
+              </IconContext.Provider>
             </button>
           </div>
         </nav>
@@ -107,19 +141,51 @@ export default function Template({ children }) {
                   }, 300);
                 }}
               >
-                {icon("1.5rem", "rgb(77, 73, 89)", <FaRegWindowClose />)}
+                <IconContext.Provider
+                  value={{
+                    size: "1.5rem",
+                    className: "nav-icon",
+                    color: "rgb(77, 73, 89)",
+                  }}
+                >
+                  <FaRegWindowClose />
+                </IconContext.Provider>
               </button>
             </div>
             <Link href="/">
-              {icon("1.5rem", "rgb(94, 62, 186)", <GoHomeFill />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(94,62,186)",
+                }}
+              >
+                <GoHomeFill />
+              </IconContext.Provider>
             </Link>
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <BiBookContent />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <BiBookContent />
+              </IconContext.Provider>
             </Link>
           </div>
           <div className="sidebarIcons flex">
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <LuSettings />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <LuSettings />
+              </IconContext.Provider>
             </Link>
             <Link
               href="/authentication/login"
@@ -128,7 +194,15 @@ export default function Template({ children }) {
                 display: user ? "none" : "inherit",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxEnter />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <RxEnter />
+              </IconContext.Provider>
             </Link>
             <button
               type="button"
@@ -144,7 +218,15 @@ export default function Template({ children }) {
                 display: user ? "inherit" : "none",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <RxExit />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <RxExit />
+              </IconContext.Provider>
             </button>
           </div>
         </nav>
@@ -153,7 +235,15 @@ export default function Template({ children }) {
         <header className="pageHeader flex">
           <nav className="flex">
             <form action="" name="searchForm" id="searchForm" className="flex">
-              {icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(70,61,97)",
+                }}
+              >
+                <PiMagnifyingGlassLight />
+              </IconContext.Provider>
               <input
                 type="search"
                 name="filter"
@@ -161,8 +251,24 @@ export default function Template({ children }) {
                 placeholder="Search for templates, project, etc"
               />
               <div className="formClose flex">
-                {icon("1.5rem", "rgba(77, 77, 77, 0.2)", <IoMdOptions />)}
-                {icon("1rem", "rgba(235, 234, 239, 1)", <AiFillCloseCircle />)}
+                <IconContext.Provider
+                  value={{
+                    size: "1.5rem",
+                    className: "nav-icon",
+                    color: "rgb(77,77,77,0.2)",
+                  }}
+                >
+                  <IoMdOptions />
+                </IconContext.Provider>
+                <IconContext.Provider
+                  value={{
+                    size: "1rem",
+                    className: "nav-icon",
+                    color: "rgb(235,234,239,1)",
+                  }}
+                >
+                  <AiFillCloseCircle />
+                </IconContext.Provider>
               </div>
             </form>
             <div className="createBtnCredit flex">
@@ -187,10 +293,26 @@ export default function Template({ children }) {
           </nav>
           <div className="personalDetails flex">
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <SlCalender />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <SlCalender />
+              </IconContext.Provider>
             </Link>
             <Link href="/pending">
-              {icon("1.5rem", "rgb(77, 73, 89)", <IoIosNotificationsOutline />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <IoIosNotificationsOutline />
+              </IconContext.Provider>
             </Link>
             <Link
               href={"authentication/login"}
@@ -206,7 +328,15 @@ export default function Template({ children }) {
                 display: user ? "inherit" : "none",
               }}
             >
-              {icon("1.5rem", "rgb(77, 73, 89)", <VscAccount />)}
+              <IconContext.Provider
+                value={{
+                  size: "1.5rem",
+                  className: "nav-icon",
+                  color: "rgb(77, 73, 89)",
+                }}
+              >
+                <VscAccount />
+              </IconContext.Provider>
             </Link>
           </div>
         </header>

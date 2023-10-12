@@ -1,7 +1,6 @@
 "use client";
 import { Merienda } from "next/font/google";
 import Socials from "./components/Socials";
-// import { Icon } from "./components/icon";
 import { PiGridFourFill, PiMagnifyingGlassLight } from "react-icons/pi";
 import { VscAccount } from "react-icons/vsc";
 import { IconContext } from "react-icons";
@@ -9,11 +8,6 @@ import { IconContext } from "react-icons";
 const meri = Merienda({ subsets: ["latin"] });
 
 export default function Home() {
-  const icon = (size, color, icon, className = "nav-icon") => (
-    <IconContext.Provider value={{ size, className, color }}>
-      {icon}
-    </IconContext.Provider>
-  );
   return (
     <>
       <header className="welcomeBanner flex">
@@ -40,12 +34,15 @@ export default function Home() {
               setTimeout(() => {}, 500);
             }}
           >
-            {icon(
-              "3rem",
-              "rgba(70, 61, 97, 1)",
-              <PiGridFourFill />,
-              "mobileItem navIcon"
-            )}
+            <IconContext.Provider
+              value={{
+                size: "3rem",
+                className: "mobileItem navIcon",
+                color: "rgb(70,61,97,1)",
+              }}
+            >
+              <PiGridFourFill />
+            </IconContext.Provider>
           </button>
           <select name="zaraVentures" id="zaraSelect" autoComplete="off">
             <option>Zara Ventures</option>
@@ -53,12 +50,15 @@ export default function Home() {
             <option>Start</option>
             <option>Create</option>
           </select>
-          {icon(
-            "3rem",
-            "rgb(77, 73, 89)",
-            <VscAccount />,
-            "mobileItem navIcon"
-          )}
+          <IconContext.Provider
+            value={{
+              size: "3rem",
+              className: "mobileItem navIcon",
+              color: "rgb(77, 73, 89)",
+            }}
+          >
+            <VscAccount />
+          </IconContext.Provider>
           <p>
             You should have more engagement by 6pm today, try posting then.
             <br />
@@ -72,7 +72,15 @@ export default function Home() {
         id="mobileSearchForm"
         className="flex mobileItem"
       >
-        {icon("1.5rem", "rgb(70, 61, 97)", <PiMagnifyingGlassLight />)}
+        <IconContext.Provider
+          value={{
+            size: "1.5rem",
+            className: "nav-icon",
+            color: "rgb(70,61,97)",
+          }}
+        >
+          <PiMagnifyingGlassLight />
+        </IconContext.Provider>
         <input
           type="search"
           name="filter"
